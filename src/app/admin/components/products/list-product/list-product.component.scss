@@ -1,0 +1,21 @@
+table{
+    width:100%;
+}
+th {
+  background-color: #006064;
+  color: white;
+  font-weight: 500;
+}
+tr.mat-row:nth-child(2n+1) {
+  background-color: #00838f;
+  
+}
+tr.mat-row{
+&:hover {
+  background-color: #00bcd4;
+  cursor:pointer
+}
+}
+.material-icons-delete {
+  color: #d50000
+}

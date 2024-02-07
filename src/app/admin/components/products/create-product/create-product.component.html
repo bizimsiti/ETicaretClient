@@ -1,0 +1,16 @@
+<mat-form-field class="create-input">
+  <mat-label>Name</mat-label>
+  <input matInput type="text" #Name />
+</mat-form-field>
+<mat-form-field class="create-input">
+  <mat-label>Stock</mat-label>
+  <input matInput type="number" value="0" min="0" #Stock />
+</mat-form-field>
+<mat-form-field class="create-input">
+  <mat-label>Price</mat-label>
+  <input matInput type="number" value="0" min="0" #Price />
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="create(Name, Stock, Price)">
+  Create
+</button>
+<app-file-upload [options]="fileUploadOptions"></app-file-upload>
