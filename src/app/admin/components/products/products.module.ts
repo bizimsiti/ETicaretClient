@@ -15,13 +15,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
 import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
+import { DialogModule } from '../../../dialogs/dialog.module';
 @NgModule({
   declarations: [
     ProductsComponent,
     CreateProductComponent,
     ListProductComponent,
-    DeleteDirective,
-    DeleteDialogComponent
+    DeleteDirective
   ],
   imports: [
     CommonModule,
@@ -35,8 +35,8 @@ import { FileUploadModule } from '../../../services/common/file-upload/file-uplo
     MatTableModule,
     MatPaginatorModule,
     MatIconModule,
-    MatDialogModule,
-    FileUploadModule
+    FileUploadModule,
+    DialogModule
   ]
 })
 export class ProductsModule { }

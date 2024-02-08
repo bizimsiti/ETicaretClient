@@ -1,17 +1,4 @@
 {
-  "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\admin",
-    "\\src\\app\\admin\\components",
-    "\\src\\app\\admin\\components\\products",
-    "\\src\\app\\admin\\components\\products\\create-product",
-    "\\src\\app\\services",
-    "\\src\\app\\services\\admin",
-    "\\src\\app\\services\\common",
-    "\\src\\app\\services\\common\\file-upload"
-  ],
-  "SelectedNode": "\\src\\app\\services\\common\\file-upload\\file-upload.component.ts",
-  "PreviewInSolutionExplorer": false
+  "ExpandedNodes": [],
+  "PreviewInSolutionExplorer": true
 }
