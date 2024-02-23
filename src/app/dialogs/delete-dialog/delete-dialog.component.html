@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Silmek istediğinize emin misiniz ?</h1>
 <div mat-dialog-actions>
-    <button mat-button (click)="close()">HAYIR</button>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>EVET</button>
+    <button mat-button color="primary" (click)="close()">HAYIR</button>
+    <button mat-button color="warn" [mat-dialog-close]="data" cdkFocusInitial>EVET</button>
 </div>

@@ -9,7 +9,6 @@ import { CustomTostrService, ToastrMessageType, ToastrPosition } from '../../../
 export class HomeComponent implements OnInit {
 
   constructor(private toastr: CustomTostrService) {
-    toastr.message("selam", "başlık", { messageType: ToastrMessageType.Error, position: ToastrPosition.TopLeft })
   }
 
   ngOnInit(): void {

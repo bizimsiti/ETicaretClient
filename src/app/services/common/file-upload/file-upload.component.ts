@@ -2,6 +2,8 @@ import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NgxFileDropEntry } from 'ngx-file-drop';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SpinnerName } from '../../../base/base.component';
 import { FileUploadDialogComponent, FileUploadState } from '../../../dialogs/file-upload-dialog/file-upload-dialog.component';
 import { AlertifyService, MessagePosition, MessageType } from '../../admin/alertify.service';
 import { CustomTostrService, ToastrMessageType, ToastrPosition } from '../../ui/custom-tostr.service';
@@ -15,7 +17,7 @@ import { HttpClientService } from '../http-client.service';
 })
 export class FileUploadComponent implements OnInit {
 
-  constructor(private http: HttpClientService, private alertify: AlertifyService, private toastr: CustomTostrService, private dialog: MatDialog, private dialogService: DialogService) { }
+  constructor(private http: HttpClientService, private alertify: AlertifyService, private toastr: CustomTostrService, private dialog: MatDialog, private dialogService: DialogService,private spinner : NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
@@ -41,6 +43,7 @@ export class FileUploadComponent implements OnInit {
       componentType: FileUploadDialogComponent,
       data: FileUploadState,
       afterClosed: () => {
+        this.spinner.show(SpinnerName.SaveSpinner)
         this.http.post({
           controller: this.options.controller,
           action: this.options.action,
@@ -59,6 +62,8 @@ export class FileUploadComponent implements OnInit {
               messageType: ToastrMessageType.Success,
               position: ToastrPosition.TopRight
             })
+            this.spinner.hide(SpinnerName.SaveSpinner)
+
           }
         }, (errorResponse: HttpErrorResponse) => {
           if (this.options.isAdminPage) {
@@ -72,6 +77,8 @@ export class FileUploadComponent implements OnInit {
               messageType: ToastrMessageType.Error,
               position: ToastrPosition.TopRight
             })
+            this.spinner.hide(SpinnerName.SaveSpinner)
+
           }
         });
       }

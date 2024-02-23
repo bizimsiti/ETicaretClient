@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FileUploadComponent } from './file-upload.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
-
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -10,10 +10,11 @@ import { NgxFileDropModule } from 'ngx-file-drop';
   ],
   imports: [
     CommonModule,
-    NgxFileDropModule
+    NgxFileDropModule,
+    MatButtonModule
   ],
   exports: [
-    FileUploadComponent
+    FileUploadComponent,
   ]
 })
 export class FileUploadModule { }
